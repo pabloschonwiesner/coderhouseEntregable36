@@ -1,0 +1,31 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "set NODE_ENV=development&& nodemon src/index.js",
+    "debug": "set NODE_ENV=development&& nodemon src/index.js",
+    "start": "set NODE_ENV=production&& node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pabloschonwiesner/ecommerceCoderhouse.git"
+  },
+  "author": "Pablo Schonwiesner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pabloschonwiesner/ecommerceCoderhouse/issues"
+  },
+  "homepage": "https://github.com/pabloschonwiesner/ecommerceCoderhouse#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3",
+    "mongoose-sequence": "^5.3.1"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}

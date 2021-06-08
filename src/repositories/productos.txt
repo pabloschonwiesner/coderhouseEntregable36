@@ -1,0 +1,22 @@
+[
+	{
+		"id_producto": 2,
+		"nombre": "Mayonesa Hellmans",
+		"timestamp": 1615090440876,
+		"descripcion": "Mayonesa Hellmans Premium 2.75kg",
+		"codigo": "mayo1",
+		"foto": "https://http2.mlstatic.com/D_NQ_NP_2X_706878-MLA45106019219_032021-F.webp",
+		"precio": 25.8,
+		"stock": 250
+	},
+	{
+		"id_producto": 3,
+		"nombre": "Mayonesa Hellmans",
+		"timestamp": 1615090444224,
+		"descripcion": "Mayonesa Hellmans Premium 2.75kg",
+		"codigo": "mayo1",
+		"foto": "https://http2.mlstatic.com/D_NQ_NP_2X_706878-MLA45106019219_032021-F.webp",
+		"precio": 25.8,
+		"stock": 250
+	}
+]
