@@ -8,7 +8,7 @@ class ProductosService {
       let productos = await productosRepository.getProductos( id_producto, queryParams )
       return productos
     } catch ( err ) { throw err }
-  }prod
+  }
 
   async addProducto ( producto ) {
     try {

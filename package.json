@@ -4,9 +4,9 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "dev": "set NODE_ENV=development&& nodemon src/index.js",
-    "debug": "set NODE_ENV=development&& nodemon src/index.js",
-    "start": "set NODE_ENV=production&& node src/index.js"
+    "dev": "set NODE_ENV=development&& nodemon src/app.js",
+    "debug": "set NODE_ENV=development&& nodemon src/app.js",
+    "start": "set NODE_ENV=production&& node src/app.js"
   },
   "repository": {
     "type": "git",
@@ -19,10 +19,21 @@
   },
   "homepage": "https://github.com/pabloschonwiesner/ecommerceCoderhouse#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-mongo": "^4.4.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-session": "^1.17.2",
+    "log4js": "^6.3.0",
+    "mongo-store": "0.0.2",
     "mongoose": "^5.12.3",
-    "mongoose-sequence": "^5.3.1"
+    "mongoose-sequence": "^5.3.1",
+    "nodemailer": "^4.7.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "twilio": "^3.63.1"
   },
   "engines": {
     "node": ">=14.0.0",

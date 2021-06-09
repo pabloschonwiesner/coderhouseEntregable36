@@ -4,7 +4,8 @@ const AutoIncrement = require('mongoose-sequence')(mongoose)
 let Schema = mongoose.Schema
 
 let carritoSchema = new Schema({
-  productos: Array
+  productos: Array,
+  id_usuario: String,
 }, { timestamps: true})
 
 carritoSchema.plugin(AutoIncrement, { inc_field: 'id_carrito'})

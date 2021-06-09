@@ -1,3 +1,5 @@
+const { loggerError, loggerWarn } = require('./services/logger.service')
+
 class Helpers {
 
   respuestaExitosa (res, data) {
@@ -10,6 +12,7 @@ class Helpers {
   }
 
   respuestaSinAutorizacion (req, res) {
+    loggerWarn.warn(`ruta ${req.originalUrl} método ${req.method} no autorizada`)
     return res
       .status(401)
       .json({
@@ -19,6 +22,7 @@ class Helpers {
   }
 
   respuestaError (res, err) {
+    loggerError.err( err.message )
     return res
       .status(500)
       .json({

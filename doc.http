@@ -1,4 +1,4 @@
-@url = http://localhost:8080
+@url = http://localhost:8081
 
 
 // perfil = 1 => Administrador, perfil = 2 => usuarios
@@ -15,12 +15,12 @@ Content-Type: application/json
 perfil: {{perfil}}
 
 {
-  "nombre": "Mayonesa Hellmans",
-  "descripcion": "Mayonesa Hellmans Premium 2.75kg",
-  "codigo": "mayo1",
+  "nombre": "Ravioles Villa D'Agri",
+  "descripcion": "Ravioles de Verdura x 1kg",
+  "codigo": "ravio1",
   "foto": "https://http2.mlstatic.com/D_NQ_NP_2X_706878-MLA45106019219_032021-F.webp",
-  "precio": 25.8,
-  "stock": 250
+  "precio": 150.6,
+  "stock": 100
 }
 
 PUT {{url}}/productos/1 HTTP/1.1
@@ -43,15 +43,41 @@ perfil: {{perfil}}
 // carritos
 
 GET {{url}}/carritos HTTP/1.1
-perfil: {{perfil}}
 
-GET {{url}}/carritos/1 HTTP/1.1
-perfil: {{perfil}}
+GET {{url}}/carritos/miCarrito HTTP/1.1
 
-PUT {{url}}/carritos/1/2 HTTP/1.1
+// agregar un producto al carrito
+PUT {{url}}/carritos/3 HTTP/1.1
 Content-Type: application/json
-perfil: {{perfil}}
 
-DELETE {{url}}/carritos/1/2 HTTP/1.1
+DELETE {{url}}/carritos/2 HTTP/1.1
 Content-Type: application/json
-perfil: {{perfil}}
+
+GET  {{url}}/carritos/finalizarCompra HTTP/1.1
+Content-Type: application/json
+
+// usuarios
+
+POST {{url}}/usuarios HTTP/1.1
+Content-Type: application/json
+
+{
+  "usuario": "pablo",
+  "password": "muydificil",
+  "nombre": "Pablo",
+  "direccion": "Av de Mayo 123",
+  "edad": 39,
+  "telefono": "+5491140430759",
+  "foto": "https://randomuser.me/api/portraits/men/75.jpg",
+  "email": "prueba@prueba.com.ar"
+}
+
+POST {{url}}/usuarios/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "usuario": "pablo",
+  "password": "muydificil"
+}
+
+GET {{url}}/usuarios/salir HTTP/1.1

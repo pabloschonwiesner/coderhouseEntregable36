@@ -1,4 +1,5 @@
 
+const { db } = require('./../models/productos.model')
 const Producto = require('./../models/productos.model')
 
 class ProductosRepository {
@@ -7,15 +8,15 @@ class ProductosRepository {
     try {
       let filters = { $and: [] } 
 
-      if(queryParams.precioMinimo) {
+      if(queryParams && queryParams.precioMinimo) {
         filters.$and.push( { precio: { $gte: Number(queryParams.precioMinimo)} })
       } 
       
-      if(queryParams.precioMaximo) {
+      if(queryParams && queryParams.precioMaximo) {
         filters.$and.push( { precio: { $lte: Number(queryParams.precioMaximo)} })
       }
 
-      if(queryParams.nombre) {
+      if(queryParams && queryParams.nombre) {
         filters.$and.push( { nombre: { $regex: `.*${queryParams.nombre}`, $options: 'i'} } )
       }
 
@@ -24,7 +25,7 @@ class ProductosRepository {
         let productos = await Producto.find( { id_producto })
         return productos
       } else {
-        let productos = await Producto.find( filters )
+        let productos = await Producto.find( filters.$and.length > 0 ? filters : {} )
         return productos
 
       }
